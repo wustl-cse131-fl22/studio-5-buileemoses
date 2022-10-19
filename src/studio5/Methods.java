@@ -16,7 +16,9 @@ public class Methods {
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
-		
+		double differenceX = x2 - x1;
+		double differenceY = y2 - y1;
+		distance = Math.sqrt(differenceX*differenceX + differenceY*differenceY);
 		return distance;
 	}
 
