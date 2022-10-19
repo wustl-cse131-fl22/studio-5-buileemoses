@@ -37,16 +37,20 @@ public class Methods {
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
 
-		
+		StdDraw.setPenColor(0, 109, 219);
+		StdDraw.filledCircle(x, y, radius*(3.0/4.0));
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
 
-		
+		StdDraw.setPenColor(146, 0, 0);
+		StdDraw.filledCircle(x, y, radius*(1.0/2.0));
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
 
+		StdDraw.setPenColor(255, 255, 109);
+		StdDraw.filledCircle(x, y, radius*(1.0/4.0));
 		
 	}
 
@@ -65,6 +69,19 @@ public class Methods {
 		String result = "";
 		// TODO: Finish this method
 		
+		char[] letters = source.toCharArray();
+		
+		for (int i = 0; i < letters.length; i++) {
+			String holding = "";
+			if (letters[i] == target) {
+				holding = result + replacement;
+			}
+			else {
+				holding = result + letters[i];
+			}
+			result = holding;
+		}
+		
 		return result;
 	}
 
@@ -76,7 +93,10 @@ public class Methods {
 	 */
 	public static int arraySum(int[] values) {
 		int sum = 0;
-		// FIXME: Compute the sum of the values in an array
+		
+		for (int i = 0; i < values.length; i++) {
+			sum += values[i];
+		}
 		
 		return sum;
 	}
@@ -89,12 +109,29 @@ public class Methods {
 	 * @return and array of size that's filled with value
 	 */
 	public static int[] filledArray(int length, int value) {
-		int[] values = null; // FIXME: Create an array of the appropriate size
+		int[] values = new int[length]; // FIXME: Create an array of the appropriate size
 		// TODO: Finish this method
-
+		
+		for (int i = 0; i < length; i++) {
+			values[i] = value;
+		}
 		
 
 		return values;
+	}
+	
+	public static double arrayMean(int[] values) {
+		double amount = values.length;
+		
+		double sum = 0;
+		
+		for (int i = 0; i < values.length; i++) {
+			sum += values[i];
+		}
+		
+		double x = sum / amount;
+		
+		return x;
 	}
 
 	// TODO: Create an arrayMean method which accepts an int array of values parameter.
